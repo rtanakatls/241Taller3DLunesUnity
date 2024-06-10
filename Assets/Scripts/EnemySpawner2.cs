@@ -9,11 +9,17 @@ public class EnemySpawner2 : MonoBehaviour
     private float timer;
     private float totalTimer;
     private int index;
-    private int collectionIndex;    
+    private int collectionIndex;
+
+    private void Awake()
+    {
+        collectionIndex=Random.Range(0, enemyCollections.Count);
+        enemies = enemyCollections[collectionIndex].Enemies;
+    }
 
     private void Update()
     {
-        Progression();
+       // Progression();
         Spawn();
     }
 
